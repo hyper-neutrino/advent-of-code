@@ -15,8 +15,8 @@ for num in nums:
         for row in board:
             for i in range(len(row)):
                 if row[i] == num:
-                    row[i] = 0
-        if any(all(x == 0 for x in row) for row in board) or any(all(row[i] == 0 for row in board) for i in range(len(board[0]))):
+                    row[i] = None
+        if any(all(x == None for x in row) for row in board) or any(all(row[i] == None for row in board) for i in range(len(board[0]))):
             lb = board
             del boards[bi]
         else:
@@ -24,4 +24,4 @@ for num in nums:
     if len(boards) == 0:
         break
 
-print(sum(map(sum, lb)) * num)
+print(sum(x or 0 for row in lb for x in row) * num)

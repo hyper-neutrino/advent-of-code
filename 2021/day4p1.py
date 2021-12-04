@@ -12,7 +12,7 @@ for num in nums:
         for row in board:
             for i in range(len(row)):
                 if row[i] == num:
-                    row[i] = 0
-        if any(all(x == 0 for x in row) for row in board) or any(all(row[i] == 0 for row in board) for i in range(len(board[0]))):
-            print(sum(map(sum, board)) * num)
+                    row[i] = None
+        if any(all(x == None for x in row) for row in board) or any(all(row[i] == None for row in board) for i in range(len(board[0]))):
+            print(sum(x or 0 for row in board for x in row) * num)
             exit(0)

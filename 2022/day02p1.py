@@ -4,7 +4,7 @@ for line in open(0).read().splitlines():
     x, y = line.split()
 
     x = ord(x) - 65
-    y = ord(y) - ord("Y")
+    y = ord(y) - ord("X")
 
     if x == y:
         t += 3

@@ -15,7 +15,7 @@ def f(x, y):
     
     return len(x) - len(y)
 
-x = list(map(eval, open(0).read().split())) + [[[2]], [[6]]]
+x = list(map(eval, open(0).read().split()))
 
 i2 = 1
 i6 = 2

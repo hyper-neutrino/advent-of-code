@@ -10,7 +10,7 @@ for line in open(0):
         for x in range(x1, x2 + 1):
             for y in range(y1, y2 + 1):
                 b.add(x + y * 1j)
-                abyss = max(abyss, y + 1)
+                abyss = max(abyss, y + 1) # This can be moved out of the loops for better speed; see https://www.youtube.com/watch?v=Uf_IF_3RbKw&lc=UgzeJ55datIEW1jUXrJ4AaABAg
 
 t = 0
 

@@ -18,7 +18,7 @@ def f(x, y):
 x = list(map(eval, open(0).read().split()))
 
 i2 = 1
-i6 = 2
+i6 = 2 # edit : i6 = 1
 
 for a in x:
     if f(a, [[2]]) < 0:

@@ -31,19 +31,19 @@ int dfs(int time, int ore_bots, int clay_bots, int obs_bots, int ore, int clay, 
 
     int maxval = 0, wait, remtime;
 
-    if (ore_bots < ore_max)
+    if (ore_bots * time < ore_max * time - ore)
     {
         wait = std::max(0, (ore_cost - ore + ore_bots - 1) / ore_bots) + 1;
         step(1, 0, 0, 0);
     }
 
-    if (clay_bots < obs_cost_clay)
+    if (clay_bots * time < obs_cost_clay * time - clay)
     {
         wait = std::max(0, (clay_cost - ore + ore_bots - 1) / ore_bots) + 1;
         step(0, 1, 0, 0);
     }
 
-    if (obs_bots < geo_cost_obs && clay_bots)
+    if ((obs_bots * time < geo_cost_obs * time - obs) && clay_bots)
     {
         wait = std::max(0, std::max((obs_cost_ore - ore + ore_bots - 1) / ore_bots, (obs_cost_clay - clay + clay_bots - 1) / clay_bots)) + 1;
         step(0, 0, 1, 0);

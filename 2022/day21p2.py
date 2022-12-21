@@ -20,7 +20,7 @@ for a in x:
         left, op, right = expr.split()
         if left in monkeys and right in monkeys:
             if name == "root":
-                print(sympy.solve(monkeys[left] - monkeys[right]))
+                print(sympy.solve(monkeys[left] - monkeys[right])[0])
                 break
             monkeys[name] = ops[op](monkeys[left], monkeys[right])
         else:

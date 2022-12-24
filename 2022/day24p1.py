@@ -29,11 +29,16 @@ while queue:
         
         if (nr < 0 or nc < 0 or nr >= r or nc >= c) and not (nr, nc) == (-1, 0):
             continue
-        
-        for i, tr, tc in ((0, 0, -1), (1, 0, 1), (2, -1, 0), (3, 1, 0)):
-            if ((nr - tr * time) % r, (nc - tc * time) % c) in blizzards[i]:
-                break
-        else:
+
+        fail = False
+
+        if (nr, nc) != (-1, 0):
+            for i, tr, tc in ((0, 0, -1), (1, 0, 1), (2, -1, 0), (3, 1, 0)):
+                if ((nr - tr * time) % r, (nc - tc * time) % c) in blizzards[i]:
+                    fail = True
+                    break
+
+        if not fail:
             key = (nr, nc, time % lcm)
             
             if key in seen:

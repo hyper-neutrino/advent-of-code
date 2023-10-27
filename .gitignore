@@ -1,6 +1,5 @@
 in.txt
 test.txt
 a.out
-load
-solution.py
-part1.py
+solution*
+.prettierrc 

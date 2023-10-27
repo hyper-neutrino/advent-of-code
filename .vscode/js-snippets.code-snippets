@@ -1,0 +1,32 @@
+{
+    "Read Input": {
+        "scope": "javascript,typescript",
+        "prefix": "read",
+        "body": ["import { readFileSync } from \"fs\";", "", "console.log(readFileSync(process.argv[2], \"utf-8\").trim()$0);"]
+    },
+    "Read Input As Chars": {
+        "scope": "javascript,typescript",
+        "prefix": "rmap",
+        "body": ["import { readFileSync } from \"fs\";", "", "console.log([...readFileSync(process.argv[2], \"utf-8\").trim()]$0);"]
+    },
+    "Read Input As Lines": {
+        "scope": "javascript,typescript",
+        "prefix": "rlines",
+        "body": ["import { readFileSync } from \"fs\";", "", "console.log(readFileSync(process.argv[2], \"utf-8\").trim().split(/\\n/)$0);"]
+    },
+    "Read Input No Print": {
+        "scope": "javascript,typescript",
+        "prefix": "readx",
+        "body": ["import { readFileSync } from \"fs\";", "", "let x = readFileSync(process.argv[2], \"utf-8\").trim();"]
+    },
+    "Read Input As Chars No Print": {
+        "scope": "javascript,typescript",
+        "prefix": "rmapx",
+        "body": ["import { readFileSync } from \"fs\";", "", "let x = [...readFileSync(process.argv[2], \"utf-8\").trim()];"]
+    },
+    "Read Input As Lines No Print": {
+        "scope": "javascript,typescript",
+        "prefix": "rlinesx",
+        "body": ["import { readFileSync } from \"fs\";", "", "let x = readFileSync(process.argv[2], \"utf-8\").trim().split(/\\n/);"]
+    }
+}

@@ -1,0 +1,1 @@
+print(sum(i for i, m in enumerate((dict(sorted((y, int(x)) for x, y in map(str.split, line.split(":")[1].strip().replace(";", ",").split(", ")))) for line in open(0)), 1) if m["red"] <= 12 and m["green"] <= 13 and m["blue"] <= 14))

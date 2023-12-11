@@ -1,0 +1,1 @@
+print((lambda a: (lambda s: [[s.__setitem__(i + j + 1, s[i + j + 1] + s[i]) for i in range(len(a)) for j in range(a[i])], sum(s)][1])([1] * len(a)))([len(x & y) for x, y in [[set(group.split()) for group in line.split(":")[1].strip().split(" | ")] for line in open(0)]]))

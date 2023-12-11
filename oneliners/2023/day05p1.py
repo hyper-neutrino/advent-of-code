@@ -1,0 +1,1 @@
+print((lambda s, m: (lambda f: f(f, s, m))(lambda f, s, m: min(s) if len(m) == 0 else f(f, [([x - k[1] + k[0] for k in m[0] if k[1] <= x < k[1] + k[2]] + [x])[0] for x in s], m[1:])))(*(lambda a, *b: (list(map(int, a.split(":")[1].split())), [[list(map(int, k.split())) for k in x.splitlines()[1:]] for x in b]))(*open(0).read().split("\n\n"))))

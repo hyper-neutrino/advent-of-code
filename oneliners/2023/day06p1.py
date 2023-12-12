@@ -1,0 +1,1 @@
+print((lambda a: [[a.__setitem__(0, a[0] * k) for k in a[1:]], a[0]][1])([(lambda k: int(t - int((t - k ** 0.5) / 2 + 1) * 2 + 1) if k > 0 else 0)(t ** 2 - 4 * d) for t, d in zip(*[list(map(int, line.split(":")[1].split())) for line in open(0)])]))

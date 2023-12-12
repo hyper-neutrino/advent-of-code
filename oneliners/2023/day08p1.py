@@ -1,0 +1,1 @@
+print((lambda re, s, _, *m: (lambda a, n: len([0 if p == "ZZZ" else a.append(n[p][s[(len(a) - 1) % len(s)] == "R"]) for p in a]) - 1)(["AAA"], dict((a, (b, c)) for a, b, c in [re.findall("\\w{3}", k) for k in m])))(__import__("re"), *open(0).read().splitlines()))

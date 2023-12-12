@@ -1,0 +1,1 @@
+print(sum(i * v for i, (_, v) in enumerate(sorted([(x, int(y)) for x, y in map(str.split, open(0))], key = lambda x: ((lambda a, c: sum(a) + c ** 2 + c * max(a) * 2)([x[0].count(k) for k in x[0] if k != "J"] + [0], x[0].count("J")), ["J23456789TQKA".index(k) for k in x[0]])), 1)))

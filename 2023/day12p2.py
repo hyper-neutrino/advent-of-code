@@ -1,36 +1,28 @@
 cache = {}
 
-def count(cfg, nums, flag=False):
-    def inner():
-        if cfg == "":
-            return 1 if sum(nums) == 0 else 0
+def count(cfg, nums):
+    if cfg == "":
+        return 1 if nums == () else 0
 
-        if sum(nums) == 0:
-            return 0 if "#" in cfg else 1
-        
-        if cfg[0] == "#":
-            if flag and nums[0] == 0:
-                return 0
-            return count(cfg[1:], (nums[0] - 1, *nums[1:]), True)
-        
-        if cfg[0] == ".":
-            if flag and nums[0] > 0:
-                return 0
-            return count(cfg[1:], nums[1:] if nums[0] == 0 else nums, False)
-        
-        if flag:
-            if nums[0] == 0:
-                return count(cfg[1:], nums[1:], False)
-            return count(cfg[1:], (nums[0] - 1, *nums[1:]), True)
-
-        return count(cfg[1:], nums, False) + count(cfg[1:], (nums[0] - 1, *nums[1:]), True)
+    if nums == ():
+        return 0 if "#" in cfg else 1
     
-    key = (cfg, nums, flag)
+    key = (cfg, nums)
     
-    if key not in cache:
-        cache[key] = inner()
+    if key in cache:
+        return cache[key]
 
-    return cache[key]
+    result = 0
+    
+    if cfg[0] in ".?":
+        result += count(cfg[1:], nums)
+        
+    if cfg[0] in "#?":
+        if nums[0] <= len(cfg) and "." not in cfg[:nums[0]] and (nums[0] == len(cfg) or cfg[nums[0]] != "#"):
+            result += count(cfg[nums[0] + 1:], nums[1:])
+
+    cache[key] = result
+    return result
 
 total = 0
 

@@ -1,0 +1,1 @@
+print((lambda f: sum(f(g) * 100 + f(list(zip(*g))) for g in map(str.splitlines, open(0).read().split("\n\n"))))(lambda g: [*[r for r in range(1, len(g)) if sum(sum(a != b for a, b in zip(x, y)) for x, y in zip(g[:r][::-1], g[r:])) == 1], 0][0]))

@@ -29,11 +29,11 @@ def count(ranges, name = "in"):
     for key, cmp, n, target in rules:
         lo, hi = ranges[key]
         if cmp == "<":
-            T = (lo, n - 1)
-            F = (n, hi)
+            T = (lo, min(n - 1, hi))
+            F = (max(n, lo), hi)
         else:
-            T = (n + 1, hi)
-            F = (lo, n)
+            T = (max(n + 1, lo), hi)
+            F = (lo, min(n, hi))
         if T[0] <= T[1]:
             copy = dict(ranges)
             copy[key] = T

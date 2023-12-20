@@ -1,0 +1,1 @@
+print((lambda a = [(0, 0)], b = []: [[[a.append(tuple(x + y * n for x, y in zip(a[-1], [(0, 1), (1, 0), (0, -1), (-1, 0)][d]))), b.append(n)] for d, n in [(int(k[-2]), int(k[2:-2], 16)) for _, _, k in map(str.split, open(0))]], sum((x1 + x2) * (y1 - y2) for (x1, y1), (x2, y2) in zip(a, a[1:])) // 2 + sum(b) // 2 + 1][-1])())
